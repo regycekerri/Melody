@@ -18,3 +18,5 @@ Per creare un bot su telegram è necessario cercare BotFather ed eseguire i segu
 DA CONTROLLARE:
 -) ngrok.exe http 5005: inizializza il collegamento a telegram (DA ESEGUIRE SU UN TERZO TERMINALE);
 -) rasa run: avvia il server del chatbot.
+
+RICEVUTO
