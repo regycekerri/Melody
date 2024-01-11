@@ -26,3 +26,8 @@ rules:
   steps:
   - intent: out_of_scope
   - action: action_my_fallback
+
+- rule: Give informations about an artist
+  steps:
+  - intent: artist_info
+  - action: action_artist_info

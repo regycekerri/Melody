@@ -33,3 +33,22 @@ stories:
   steps:
   - intent: out_of_scope
   - action: action_my_fallback
+
+- story: artist_info path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: artist_info
+  - action: action_artist_info
+
+- story: artist_info path 2
+  steps:
+  - intent: help
+  - action: utter_help
+  - intent: artist_info
+  - action: action_artist_info
+
+- story: artist_info short path
+  steps:
+  - intent: artist_info
+  - action: action_artist_info

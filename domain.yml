@@ -12,6 +12,17 @@ intents:
   - stop
   - help
   - out_of_scope
+  - artist_info:
+      use_entities: true
+
+entities:
+  - artist
+slots:
+   artist:
+     type: text
+     mappings:
+     - type: from_entity
+       entity: artist
 
 responses:
   utter_greet:
@@ -70,7 +81,11 @@ actions:
 - utter_help
 - utter_out_of_scope
 - action_my_fallback
+- action_artist_info
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+config:
+  store_entities_as_slots: true

@@ -129,3 +129,19 @@ nlu:
     - pppppppppp
     - kkkkkkk
     - smdcspkèsj
+    
+- intent: artist_info
+  examples: |
+    - can you give me informations about [The Weeknd](artist)?
+    - I need some informations about [Taylor Swift](artist)
+    - what do you know about [Ariana Grande](artist)?
+    - I'd like to know something about [Justin Bieber](artist)
+    - do you know something about [Ed Sheeran](artist)?
+    - who is [Drake](artist)?
+    - i want to know who [Rihanna](artist) is
+    - do you know anything about [Mariah Carey](artist)?
+    - tell me who [Sia](artist) is
+    - do you know anything about the band named [Coldplay](artist)?
+    - give me details on [Kanye West](artist)
+    - tell me about [Beyoncé](artist)
+    - share information about [Shawn Mendes](artist)
