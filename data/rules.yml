@@ -11,3 +11,18 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Start the conversation
+  steps:
+  - intent: start
+  - action: utter_start
+
+- rule: Help anytime the user asks for help
+  steps:
+  - intent: help
+  - action: utter_help
+
+- rule: Fallback
+  steps:
+  - intent: out_of_scope
+  - action: action_my_fallback

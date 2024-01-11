@@ -8,10 +8,16 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - start
+  - stop
+  - help
+  - out_of_scope
 
 responses:
   utter_greet:
   - text: "Hey! How are you?"
+  - text: "Hello! What's up?"
+  - text: "Hi! How are you today?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -22,12 +28,48 @@ responses:
 
   utter_happy:
   - text: "Great, carry on!"
+  - text: "Nice, I'm happy for you!"
 
   utter_goodbye:
   - text: "Bye"
+  - text: "Goodbye"
+  - text: "See you soon!"
+  - text: "Goodbye, it was a pleasure chatting with you!"
+  - text: "Bye, come back whenever you want!"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_start:
+  - text: "🎶 Welcome, I am Melody, your personal music assistant! I know a 
+           lot of things about artists, songs and albums. Feel free to ask me anything! For more informations
+           you can type /help. 🎶"
+  - text: "🎶 Welcome, I am Melody, a bot about music, which can interact with the Spotify API. I can give
+           you a lot of informations about artists, songs and albums. Ask me whatever you need to know! If 
+           you need other informations you can type /help. 🎶"
+  
+  utter_help:
+  - text: "As a music chatbot, I can provide information about artists, songs, and albums. For example,
+           you can ask me about the most popular songs of an artist, the release date of an album, the 
+           number of streams a song has, or when a song was released."
+
+  utter_out_of_scope:
+  - buttons:
+    - title: Help
+      payload: /help
+    text: "Sorry, but I couldn't understand your question, or I may not be able to fulfill your request. 
+           Please try rephrasing your question, or feel free to ask me something else."
+
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_help
+- utter_out_of_scope
+- action_my_fallback
 
 session_config:
   session_expiration_time: 60

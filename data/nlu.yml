@@ -29,6 +29,9 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - quit
+    - close
+    - stop
 
 - intent: affirm
   examples: |
@@ -65,6 +68,11 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - I'm so happy
+    - I'm happy
+    - happy
+    - fine
+    - I'm fine
 
 - intent: mood_unhappy
   examples: |
@@ -89,3 +97,35 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: start
+  examples: |
+    - start
+    - open
+    - begin
+    - init
+
+- intent: help
+  examples: |
+    - What can i ask you?
+    - What are your functions?
+    - What should i ask you?
+    - How can you help me?
+    - I need your help
+    - help
+
+- intent: out_of_scope
+  examples: |
+    - blablabla
+    - sadasdasdasd
+    - hmmmmm
+    - hahahahhaha
+    - i'm sleeping
+    - what's the wheather update
+    - aeijfpvefvkèdlv
+    - lmlmlmlm
+    - uecwjeèqrpo
+    - aaaaaaaaaaaa
+    - pppppppppp
+    - kkkkkkk
+    - smdcspkèsj
