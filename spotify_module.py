@@ -32,46 +32,42 @@ def get_token():
 def get_auth_header(token):
     return {"Authorization": "Bearer " + token}
 
+#Funzione che ricerca le informazioni di un artista
 def search_for_artist(token, artist_name):
     url = "https://api.spotify.com/v1/search"
     header = get_auth_header(token)
-    query = f"?q={artist_name}&type=artist&limit=1"
+    query = f"?q={artist_name}&type=artist&limit=5"
 
     query_url = url + query
     result = get(query_url, headers=header)
-    json_result = json.loads(result.content)["artists"]["items"]
+    #Verifica il codice di stato nella risposta HTTP
+    if result.status_code != 200:
+        return None
+    
+    artists = result.json().get("artists", {}).get("items", [])
+    #Verifica che gli artisti non siano assenti
+    if not artists:
+        return None
 
-    artist_info = {}
+    #Ricerca l'artista con più follower
+    max_followers = artists[0].get('followers', {}).get('total', 0)
+    artist_with_most_followers = artists[0]
 
-    if len(json_result) == 0:
-        return artist_info
-   
-    artist = json_result[0]
+    for artist in artists[1:]:
+        followers = artist.get('followers', {}).get('total', 0)
+        if followers > max_followers:
+            max_followers = followers
+            artist_with_most_followers = artist
 
-    artist_info['name'] = artist['name']
-    artist_info['genres'] = artist['genres']
-    artist_info['followers'] = artist['followers']['total']
-    artist_info['image'] = artist['images'][0]['url']
+    #Verifica la presenza di immagini
+    images = artist_with_most_followers.get('images', [])
+    image_url = images[0]['url'] if images else None
+
+    artist_info = {
+        'name': artist_with_most_followers.get('name', ''),
+        'genres': artist_with_most_followers.get('genres', []),
+        'followers': max_followers,
+        'image': image_url
+    }
 
     return artist_info
-    
-def get_songs_by_artist(token, artist_id):
-    url = f"https://api.spotify.com/v1/artists/{artist_id}/top-tracks?country=US"
-    header = get_auth_header(token)
-    result = get(url, headers=header)
-    json_result = json.loads(result.content)["tracks"]
-    return json_result
-
-token = get_token()
-
-result = search_for_artist(token, "The Weeknd")
-print(result)
-#artist_id = result["id"]
-
-#songs = get_songs_by_artist(token, artist_id)
-#for idx, song in enumerate(songs):
- #   print(f"{idx + 1}. {song['name']}")
-
-
-
-
