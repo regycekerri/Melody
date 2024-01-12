@@ -52,3 +52,93 @@ stories:
   steps:
   - intent: artist_info
   - action: action_artist_info
+
+- story: top_tracks_by_artist path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: artist_info
+  - action: action_artist_info
+  - intent: top_tracks_by_artist
+  - action: action_top_tracks_by_artist
+
+- story: top_tracks_by_artist path 2
+  steps:
+  - intent: help
+  - action: utter_help
+  - intent: artist_info
+  - action: action_artist_info
+  - intent: top_tracks_by_artist
+  - action: action_top_tracks_by_artist
+
+- story: top_tracks_by_artist short path 1
+  steps:
+  - intent: artist_info
+  - action: action_artist_info
+  - intent: top_tracks_by_artist
+  - action: action_top_tracks_by_artist
+
+- story: top_tracks_by_artist short path 2
+  steps:
+  - intent: top_tracks_by_artist
+  - action: action_top_tracks_by_artist
+  
+- story: top_albums_by_artist path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: artist_info
+  - action: action_artist_info
+  - intent: top_albums_by_artist
+  - action: action_top_albums_by_artist
+
+- story: top_albums_by_artist path 2
+  steps:
+  - intent: help
+  - action: utter_help
+  - intent: artist_info
+  - action: action_artist_info
+  - intent: top_albums_by_artist
+  - action: action_top_albums_by_artist
+
+- story: top_albums_by_artist short path 1
+  steps:
+  - intent: artist_info
+  - action: action_artist_info
+  - intent: top_albums_by_artist
+  - action: action_top_albums_by_artist
+
+- story: top_albums_by_artist short path 2
+  steps:
+  - intent: top_albums_by_artist
+  - action: action_top_albums_by_artist
+  
+- story: similar_artists path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: artist_info
+  - action: action_artist_info
+  - intent: similar_artists
+  - action: action_similar_artists
+
+- story: similar_artists path 2
+  steps:
+  - intent: help
+  - action: utter_help
+  - intent: artist_info
+  - action: action_artist_info
+  - intent: similar_artists
+  - action: action_similar_artists
+
+- story: similar_artists short path 1
+  steps:
+  - intent: artist_info
+  - action: action_artist_info
+  - intent: similar_artists
+  - action: action_similar_artists
+
+- story: similar_artists short path 2
+  steps:
+  - intent: similar_artists
+  - action: action_similar_artists

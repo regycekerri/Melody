@@ -4,6 +4,7 @@ import os
 import base64
 import json
 import random
+from datetime import timedelta
 
 #Funzione che restituisce il token di Spotify
 def get_token():
@@ -91,8 +92,6 @@ def get_songs_by_artist(token, artist_id):
     for idx, song in enumerate(tracks):
         song_info = {
             'title': song['name'],
-            'album': song['album']['name'],
-            'album_release_date': song['album']['release_date'],
             'duration': song['duration_ms'],
             'popularity': song['popularity']
         }
@@ -101,7 +100,7 @@ def get_songs_by_artist(token, artist_id):
     return songs_list
 
 #Funzione che restituisce gli album più recenti di un artista
-def get_artist_albums(token, artist_id):
+def get_albums_by_artist(token, artist_id):
     url = f"https://api.spotify.com/v1/artists/{artist_id}/albums?include_groups=album%2Ccompilation&market=US&limit=10"
     header = get_auth_header(token)
     result = get(url, headers=header)
@@ -119,7 +118,6 @@ def get_artist_albums(token, artist_id):
             'title': album['name'],
             'release_date': album['release_date'],
             'total_tracks': album['total_tracks'],
-            'uri': album['uri']
         }
         albums_list.append(album_info)
 
@@ -212,3 +210,10 @@ def search_for_album(token, album_name):
     }
 
     return album_info
+
+#Funzione che converte i millisecondi in una stringa
+def milliseconds_to_string(ms):
+    delta = timedelta(milliseconds=ms)
+    minuts, seconds = divmod(delta.seconds, 60)
+    formatted_duration = "{:02}:{:02}".format(minuts, seconds)
+    return formatted_duration

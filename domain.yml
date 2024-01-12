@@ -14,6 +14,12 @@ intents:
   - out_of_scope
   - artist_info:
       use_entities: true
+  - top_tracks_by_artist:
+      use_entities: true
+  - top_albums_by_artist:
+      use_entities: true
+  - similar_artists:
+      use_entities: true
 
 entities:
   - artist
@@ -82,6 +88,9 @@ actions:
 - utter_out_of_scope
 - action_my_fallback
 - action_artist_info
+- action_top_tracks_by_artist
+- action_top_albums_by_artist
+- action_similar_artists
 
 session_config:
   session_expiration_time: 60

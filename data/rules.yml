@@ -31,3 +31,18 @@ rules:
   steps:
   - intent: artist_info
   - action: action_artist_info
+
+- rule: Give top tracks by an artist
+  steps:
+  - intent: top_tracks_by_artist
+  - action: action_top_tracks_by_artist
+
+- rule: Give top albums by an artist
+  steps:
+  - intent: top_albums_by_artist
+  - action: action_top_albums_by_artist
+
+- rule: Give similar artists
+  steps:
+  - intent: similar_artists
+  - action: action_similar_artists

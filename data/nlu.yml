@@ -171,3 +171,129 @@ nlu:
     - give me details on [](artist)
     - tell me about [](artist)
     - share information about [](artist)
+
+- intent: top_tracks_by_artist
+  examples: |
+    - What are the top tracks by [Coldplay](artist)?
+    - tell me the most popular songs of [Beyoncé](artist)
+    - give me a list of the best songs by [The Beatles](artist)
+    - Which tracks are the most famous for [Taylor Swift](artist)?
+    - List the top songs by [Ed Sheeran](artist)
+    - What are considered the best songs by [Queen](artist)?
+    - tell me the hits of [Michael Jackson](artist)
+    - can you recommend some top tracks from [Ariana Grande](artist)?
+    - list the greatest hits of [Rihanna](artist)
+    - I want to know [Justin Bieber](artist)'s top tracks
+    - What are the most played songs by [Drake](artist)?
+    - Which songs made [Madonna](artist) famous?
+    - give me the top tracks by [Bruno Mars](artist)
+    - What are the top tracks by [ggffdgfd](artist)?
+    - tell me the most popular songs of [adasgsfd](artist)
+    - give me a list of the best songs by [sdhdssdh](artist)
+    - Which tracks are the most famous for [ashuofh](artist)?
+    - List the top songs by [wdjwdiuhefjsg](artist)
+    - What are considered the best songs by [sdadhadhafsk](artist)?
+    - tell me the hits of [oifijs](artist)
+    - can you recommend some top tracks from [cxkbcbcx](artist)?
+    - list the greatest hits of [dwdwdwdn](artist)
+    - I want to know [whjiwdidqw](artist)'s top tracks
+    - What are the most played songs by [cmmxmckm](artist)?
+    - Which songs made [cncxnxcnj](artist) famous?
+    - give me the top tracks by [kmlqqqx](artist)
+    - What are the top tracks by [](artist)?
+    - tell me the most popular songs of [](artist)
+    - give me a list of the best songs by [](artist)
+    - Which tracks are the most famous for [](artist)?
+    - List the top songs by [](artist)
+    - What are considered the best songs by [](artist)?
+    - tell me the hits of [](artist)
+    - can you recommend some top tracks from [](artist)?
+    - list the greatest hits of [](artist)
+    - I want to know [](artist)'s top tracks
+    - What are the most played songs by [](artist)?
+    - Which songs made [](artist) famous?
+    - give me the top tracks by [](artist)
+
+- intent: top_albums_by_artist
+  examples: |
+    - What are the top albums by [Coldplay](artist)?
+    - tell me the most popular albums of [Beyoncé](artist)
+    - give me a list of the best albums by [The Beatles](artist)
+    - Which albums are the most famous for [Taylor Swift](artist)?
+    - List the top albums by [Ed Sheeran](artist)
+    - What are considered the best albums by [Queen](artist)?
+    - tell me the albums of [Michael Jackson](artist)
+    - can you recommend some top albums from [Ariana Grande](artist)?
+    - list the greatest albums of [Rihanna](artist)
+    - I want to know [Justin Bieber](artist)'s top albums
+    - What are the most played albums by [Drake](artist)?
+    - Which albums made [Madonna](artist) famous?
+    - give me the top albums by [Bruno Mars](artist)
+    - What are the top albums by [ggffdgfd](artist)?
+    - tell me the most popular albums of [adasgsfd](artist)
+    - give me a list of the best albums by [sdhdssdh](artist)
+    - Which albums are the most famous for [ashuofh](artist)?
+    - List the top albums by [wdjwdiuhefjsg](artist)
+    - What are considered the best albums by [sdadhadhafsk](artist)?
+    - tell me the albums of [oifijs](artist)
+    - can you recommend some top albums from [cxkbcbcx](artist)?
+    - list the greatest albums of [dwdwdwdn](artist)
+    - I want to know [whjiwdidqw](artist)'s top albums
+    - What are the most played albums by [cmmxmckm](artist)?
+    - Which albums made [cncxnxcnj](artist) famous?
+    - give me the top albums by [kmlqqqx](artist)
+    - What are the top albums by [](artist)?
+    - tell me the most popular albums of [](artist)
+    - give me a list of the best albums by [](artist)
+    - Which albums are the most famous for [](artist)?
+    - List the top albums by [](artist)
+    - What are considered the best albums by [](artist)?
+    - tell me the albums of [](artist)
+    - can you recommend some top albums from [](artist)?
+    - list the greatest albums of [](artist)
+    - I want to know [](artist)'s top albums
+    - What are the most played albums by [](artist)?
+    - Which albums made [](artist) famous?
+    - give me the top albums by [](artist)
+
+- intent: similar_artists
+  examples: |
+    - Who are some artists similar to [Imagine Dragons](artist)?
+    - Recommend musicians like [Ice Spice](artist)
+    - Give me suggestions for artists similar to [ACDC](artist)
+    - Any artists with a style similar to [Olivia Rodrigo](artist)?
+    - List musicians similar to [Lewis Capaldi](artist)
+    - What artists are considered similar to [Rolling Stones](artist)?
+    - Who has a musical style like [Chris Brown](artist)?
+    - Can you recommend artists similar to [Mariah Carey](artist)?
+    - Any recommendations for artists similar to [Tyla](artist)?
+    - I want to discover artists similar to [Justin Timberlake](artist)
+    - Who are some artists with a style like [Frank Ocean](artist)?
+    - Any musicians who share a style with [Whitney Houston](artist)?
+    - Recommend artists similar to [Ne-Yo](artist)
+    - Who are some artists similar to [dskaljfk](artist)?
+    - Any recommendations for musicians similar to [egewgjkg](artist)?
+    - Give me suggestions for artists similar to [cnjcacsjk](artist)
+    - Any artists with a style similar to [sdsdsd](artist)?
+    - List musicians similar to [peibcmj](artist)
+    - What artists are considered similar to [cnasmhy](artist)?
+    - Who has a musical style like [nwejfwgjwoigjweiogjgijwigj](artist)?
+    - Can you recommend artists similar to [cbsjsjfd](artist)?
+    - Any recommendations for artists similar to [wyrurkl](artist)?
+    - I want to discover artists similar to [sdfsdfds](artist)
+    - Who are some artists with a style like [ssujsihs](artist)?
+    - Any musicians who share a style with [hhds](artist)?
+    - Recommend artists similar to [ssnsjskc](artist)
+    - Who are some artists similar to [](artist)?
+    - Any recommendations for musicians similar to [](artist)?
+    - Give me suggestions for artists similar to [](artist)
+    - Any artists with a style similar to [](artist)?
+    - List musicians similar to [](artist)
+    - What artists are considered similar to [](artist)?
+    - Who has a musical style like [](artist)?
+    - Can you recommend artists similar to [](artist)?
+    - Any recommendations for artists similar to [](artist)?
+    - I want to discover artists similar to [](artist)
+    - Who are some artists with a style like [](artist)?
+    - Any musicians who share a style with [](artist)?
+    - Recommend artists similar to [](artist)
