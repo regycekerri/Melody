@@ -20,15 +20,31 @@ intents:
       use_entities: true
   - similar_artists:
       use_entities: true
+  - song_info:
+      use_entities: true
+  - album_info:
+      use_entities: true
 
 entities:
   - artist
+  - song_title
+  - album_title
 slots:
    artist:
      type: text
      mappings:
      - type: from_entity
        entity: artist
+   song_title:
+     type: text
+     mappings:
+     - type: from_entity
+       entity: song_title
+   album_title:
+     type: text
+     mappings:
+     - type: from_entity
+       entity: album_title
 
 responses:
   utter_greet:
@@ -91,6 +107,8 @@ actions:
 - action_top_tracks_by_artist
 - action_top_albums_by_artist
 - action_similar_artists
+- action_song_info
+- action_album_info
 
 session_config:
   session_expiration_time: 60

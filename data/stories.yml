@@ -142,3 +142,41 @@ stories:
   steps:
   - intent: similar_artists
   - action: action_similar_artists
+
+- story: song_info path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: song_info
+  - action: action_song_info
+
+- story: song_info path 2
+  steps:
+  - intent: help
+  - action: utter_help
+  - intent: song_info
+  - action: action_song_info
+
+- story: song_info short path
+  steps:
+  - intent: song_info
+  - action: action_song_info
+
+- story: album_info path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: album_info
+  - action: action_album_info
+
+- story: album_info path 2
+  steps:
+  - intent: help
+  - action: utter_help
+  - intent: album_info
+  - action: action_album_info
+
+- story: album_info short path
+  steps:
+  - intent: album_info
+  - action: action_album_info

@@ -175,10 +175,8 @@ def search_for_song(token, song_name):
     for track in tracks_sorted:
         track_info = {
             'name': track['name'],
-            'artist': track['artists'][0]['name'],
-            'album': track['album']['name'],
             'popularity': track['popularity'],
-            'image': track['album']['images'][0]['url']
+            'link': track['external_urls']['spotify'],
         }
         tracks_info.append(track_info)
 
@@ -203,9 +201,6 @@ def search_for_album(token, album_name):
 
     album_info = {
         'title': album['name'],
-        'artist': album['artists'][0]['name'],
-        'release_date': album['release_date'],
-        'total_tracks': album['total_tracks'],
         'album_link': album['external_urls']['spotify']
     }
 

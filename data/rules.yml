@@ -46,3 +46,13 @@ rules:
   steps:
   - intent: similar_artists
   - action: action_similar_artists
+
+- rule: Give informations about a song
+  steps:
+  - intent: song_info
+  - action: action_song_info
+
+- rule: Give informations about an album
+  steps:
+  - intent: album_info
+  - action: action_album_info

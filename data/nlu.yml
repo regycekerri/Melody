@@ -297,3 +297,71 @@ nlu:
     - Who are some artists with a style like [](artist)?
     - Any musicians who share a style with [](artist)?
     - Recommend artists similar to [](artist)
+
+- intent: song_info
+  examples: |
+    - tell me something about the song [Blinding Lights](song_title)
+    - can you give me details about the song [Starboy](song_title)
+    - what information do you have about the song [I Feel It Coming](song_title)
+    - i want to know more about the song [Out Of Time](song_title)
+    - provide details about the song [Save Your Tears](song_title)
+    - i would like to know something about the song [As It Was](song_title)
+    - tell me something about the track [Stay](song_title)
+    - can you give me details about the track [One Dance](song_title)
+    - what information do you have about the track [Levitating](song_title)
+    - i want to know more about the track [ABCDEFU](song_title)
+    - provide details about the track [Flowers](song_title)
+    - i would like to know something about the track [Uptown Funk](song_title)
+    - tell me something about the song [chajhjchakh](song_title)
+    - can you give me details about the song [cnckascnla](song_title)
+    - what information do you have about the song [dauouhoavh](song_title)
+    - i want to know more about the song [chuuoqchuiqchu](song_title)
+    - provide details about the song [cbucqhuiqei](song_title)
+    - i would like to know something about the song [wguiqwueioe9](song_title)
+    - tell me something about the track [dmskwowo](song_title)
+    - can you give me details about the track [rjjasfaf](song_title)
+    - what information do you have about the track [bvcmvsa](song_title)
+    - i want to know more about the track [adadad](song_title)
+    - provide details about the track [jthrh](song_title)
+    - i would like to know something about the track [qwtwetr](song_title)
+    - tell me something about the song [](song_title)
+    - can you give me details about the song [](song_title)
+    - what information do you have about the song [](song_title)
+    - i want to know more about the song [](song_title)
+    - provide details about the song [](song_title)
+    - i would like to know something about the song [](song_title)
+    - tell me something about the track [](song_title)
+    - can you give me details about the track [](song_title)
+    - what information do you have about the track [](song_title)
+    - i want to know more about the track [](song_title)
+    - provide details about the track [](song_title)
+    - i would like to know something about the track [](song_title)
+
+- intent: album_info
+  examples: |
+    - tell me something about the album [Dawn FM](album_title)
+    - can you give me details about the album [Starboy](album_title)
+    - what information do you have about the album [After Hours](album_title)
+    - i want to know more about the album [UTOPIA](album_title)
+    - provide details about the album [Future Nostalgia](album_title)
+    - i would like to know something about the album [Views](album_title)
+    - tell me something about the album [adhdkqhw](album_title)
+    - can you give me details about the album [wgewgewgh](album_title)
+    - what information do you have about the album [hdffhddhhda](album_title)
+    - i want to know more about the album [adshkyk](album_title)
+    - provide details about the album [afdsffds](album_title)
+    - i would like to know something about the album [qiqeoiqe](album_title)
+    - tell me something about the album [](album_title)
+    - can you give me details about the album [](album_title)
+    - what information do you have about the album [](album_title)
+    - i want to know more about the album [](album_title)
+    - provide details about the album [](album_title)
+    - i would like to know something about the album [](album_title)
+
+- regex: song_title
+  examples: |
+    - (?i)[a-zA-Z0-9 ]+
+    
+- regex: album_title
+  examples: |
+    - (?i)[a-zA-Z0-9 ]+

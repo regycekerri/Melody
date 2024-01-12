@@ -4,7 +4,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
-from spotify_module import get_similar_artists, get_songs_by_artist, get_token, get_auth_header, search_for_artist, milliseconds_to_string, get_albums_by_artist
+from spotify_module import get_similar_artists, get_songs_by_artist, get_token, get_auth_header, search_for_album, search_for_artist, milliseconds_to_string, get_albums_by_artist, search_for_song
 
 class MyFallback(Action):
     
@@ -114,30 +114,6 @@ class ActionTopAlbumsByArtist(Action):
                     output+=(album_info)
                 dispatcher.utter_message(text=output)
                 return []
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class ActionSimilarArtists(Action):
     def name(self) -> Text:
@@ -173,3 +149,57 @@ class ActionSimilarArtists(Action):
                     output+=(artist_info)
                 dispatcher.utter_message(text=output)
                 return []
+
+class ActionSongInfo(Action):
+    def name(self) -> Text:
+        return "action_song_info"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        song_title = str(tracker.get_slot('song_title'))
+
+        if song_title == "None" or song_title == "":
+            dispatcher.utter_message(text="You haven't provided the song title.")
+            return [SlotSet("song_title", None)]
+
+        token = get_token()
+
+        songs = search_for_song(token, song_title)
+
+        if songs == None:
+            output = f"I don't know anything about the song {song_title}. Are you sure you spelled it correctly?"
+            dispatcher.utter_message(text=output)
+            return [SlotSet("song_title", None)]
+        else: 
+            output = f"This is what I found:\n\n"
+            for song in songs:
+                song_info = f"{song['name'].upper()}\n• popularity: {song['popularity']}\n {song['link']}\n\n"
+                output+=(song_info)
+            dispatcher.utter_message(text=output)
+            return []
+
+
+class ActionAlbumInfo(Action):
+    def name(self) -> Text:
+        return "action_album_info"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        album_title = str(tracker.get_slot('album_title'))
+
+        if album_title == "None" or album_title == "":
+            dispatcher.utter_message(text="You haven't provided the song title.")
+            return [SlotSet("album_title", None)]
+
+        token = get_token()
+
+        album = search_for_album(token, album_title)
+
+        if album == None:
+            output = f"I don't know anything about the album {album_title}. Are you sure you spelled it correctly?"
+            dispatcher.utter_message(text=output)
+            return [SlotSet("album_title", None)]
+        else: 
+            output = f"This is what I found:\n\n"
+            album_info = f"{album['title'].upper()}\n{album['album_link']}\n\n"
+            output+=album_info
+            dispatcher.utter_message(text=output)
+            return []
