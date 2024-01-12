@@ -153,5 +153,62 @@ def get_similar_artists(token, artist_id):
 
     return artists_list
 
+#Funzione che ricerca le informazioni di una o più canzoni che hanno un determinato nome
+def search_for_song(token, song_name):
+    url = "https://api.spotify.com/v1/search"
+    header = get_auth_header(token)
+    query = f"?q={song_name}&type=track&market=US&limit=5"
 
-#print(get_similar_artists(get_token(), '1Xyo4u8uXC1ZmMpatF05PJ'))
+    query_url = url + query
+    result = get(query_url, headers=header)
+    #Verifica il codice di stato nella risposta HTTP
+    if result.status_code != 200:
+        return None
+    
+    tracks = result.json().get("tracks", {}).get("items", [])
+    #Verifica che le canzoni non siano assenti
+    if not tracks:
+        return None
+    
+    #Si ordinano le canzoni in base alla popolarità e si estraggono le prime 3
+    tracks_sorted = sorted(tracks, key=lambda x: x['popularity'], reverse=True)[:3]
+
+    tracks_info = []
+    for track in tracks_sorted:
+        track_info = {
+            'name': track['name'],
+            'artist': track['artists'][0]['name'],
+            'album': track['album']['name'],
+            'popularity': track['popularity'],
+            'image': track['album']['images'][0]['url']
+        }
+        tracks_info.append(track_info)
+
+    return tracks_info
+
+#Funzione che ricerca le informazioni di un album
+def search_for_album(token, album_name):
+    url = "https://api.spotify.com/v1/search"
+    header = get_auth_header(token)
+    query = f"?q={album_name}&type=album&market=US&limit=1"
+
+    query_url = url + query
+    result = get(query_url, headers=header)
+    #Verifica il codice di stato nella risposta HTTP
+    if result.status_code != 200:
+        return None
+    
+    album = result.json().get("albums", {}).get("items", [])[0]
+    #Verifica che l'album non sia assente
+    if not album:
+        return None
+
+    album_info = {
+        'title': album['name'],
+        'artist': album['artists'][0]['name'],
+        'release_date': album['release_date'],
+        'total_tracks': album['total_tracks'],
+        'album_link': album['external_urls']['spotify']
+    }
+
+    return album_info
