@@ -1,6 +1,7 @@
 ## 🎶Melody: un chatbot per la musica!🎶
 
-Melody è un chatbot sviluppato tramite il framework Rasa capace di rispondere a domande relative alla musica. In particolare, grazie al collegamento tramite gli API di spotify, è in grado di fornire informazioni riguardanti artisti, album e canzoni. 
+Melody è un chatbot sviluppato tramite il framework Rasa capace di rispondere a domande relative alla musica. In particolare, grazie al collegamento tramite 
+l'API di Spotify, è in grado di fornire informazioni riguardanti artisti, album e canzoni. 
 
 Oltre alle interazioni standard dei saluti e degli stati d'animo, Melody è in grado di:
 * indicare le informazioni principali relative ad un determinato artista, ovvero il suo nome, i suoi generi musicali, i suoi follower e una sua immagine;
