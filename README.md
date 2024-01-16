@@ -10,3 +10,5 @@ Oltre alle interazioni standard dei saluti e degli stati d'animo, Melody è in g
 * indicare le informazioni principali relative a dieci artisti simili a quello specificato, ovvero il loro nome, i loro follower, i loro generi musicali e la loro popolarità;
 * indicare le informazioni principali relative ad una specifica canzone (o a più canzoni, nel caso di un titolo condiviso), ovvero l’autore, la data di uscita, la popolarità e un link per il collegamento diretto a Spotify, per poterla ascoltare;
 * indicare le informazioni principali relative ad uno specifico album, ovvero l’autore, la data di uscita, il numero di canzoni in esso contenute e un link per il collegamento diretto a Spotify, per poterlo ascoltare.
+
+> **Note:** Per poter effettuare il test di Melody è necessario inserire i codici personali `CLIENT_ID` e `CLIENT_SECRET` all'interno del file `.env`.
